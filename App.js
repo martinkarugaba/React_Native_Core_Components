@@ -23,17 +23,22 @@ const styles = StyleSheet.create({
     borderColor: 'orange',
   },
   box: {
-    width: 300,
-    height: 300,
-    padding: 30,
-    borderRadius: 30,
+    width: '30%',
+    height: '25%',
+    // padding: 30,
+    paddingHorizontal: 10,
+    paddingVertical: 10,
+    borderRadius: 15,
+    marginHorizontal: 10,
+    marginVertical: 10,
+    borderWidth: 2,
+    borderColor: '#112840',
   },
   lightblueBg: {
     backgroundColor: 'lightblue',
   },
   lightgreenBg: {
     backgroundColor: 'lightgreen',
-    marginTop: 20,
   },
 });
 
