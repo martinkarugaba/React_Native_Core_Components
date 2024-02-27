@@ -1,15 +1,40 @@
-import { useState } from 'react';
-import { StatusBar, View } from 'react-native';
-import Greet from './components/Greet';
+import { Text, View, StyleSheet } from 'react-native';
 
 const App = () => {
   return (
-    <View style={{ border: '2px solid red' }}>
-      <StatusBar backgroundColor="lightblue" barStyle="dark-content" />
-      <Greet name="John" />
-      <Greet name="Doe" />
+    <View style={styles.container}>
+      <View style={[styles.box, styles.lightblueBg]}>
+        <Text>lightblue box</Text>
+      </View>
+      <View style={[styles.box, styles.lightgreenBg]}>
+        <Text>lightgreen box</Text>
+      </View>
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 60,
+    backgroundColor: '#fafafa',
+    borderStyle: 'solid',
+    borderWidth: 2,
+    borderColor: 'orange',
+  },
+  box: {
+    width: 300,
+    height: 300,
+    padding: 30,
+    borderRadius: 30,
+  },
+  lightblueBg: {
+    backgroundColor: 'lightblue',
+  },
+  lightgreenBg: {
+    backgroundColor: 'lightgreen',
+    marginTop: 20,
+  },
+});
 
 export default App;
