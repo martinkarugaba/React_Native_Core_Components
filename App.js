@@ -3,6 +3,9 @@ import { Text, View, StyleSheet } from 'react-native';
 const App = () => {
   return (
     <View style={styles.container}>
+      <View style={styles.darkMode}>
+        <Text style={styles.darkModeText}>Style inheritence <Text style={styles.boldText}>in bold</Text></Text>
+      </View>
       <View style={[styles.box, styles.lightblueBg, styles.boxShadow]}>
         <Text>lightblue box</Text>
       </View>
@@ -21,6 +24,15 @@ const styles = StyleSheet.create({
     borderStyle: 'solid',
     borderWidth: 2,
     borderColor: 'orange',
+  },
+  darkMode: {
+    backgroundColor: '#111111',
+  },
+  darkModeText: {
+    color: 'white',
+  },
+  boldText: {
+    fontWeight: 'bold'
   },
   box: {
     width: 200,
@@ -48,7 +60,7 @@ const styles = StyleSheet.create({
   },
   androidShadow: {
     elevation: 10,
-  }
+  },
 });
 
 export default App;
