@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   View,
   Text,
@@ -6,11 +7,12 @@ import {
   ImageBackground,
   Button,
   Pressable,
-  Modal
+  Modal,
 } from 'react-native';
 const logoImg = require('./assets/twitter.jpg');
 
 export default function App() {
+  const [isModalVisible, setIsModalVisible] = useState(false);
   return (
     <View style={{ flex: 1, backgroundColor: '#fafafa', padding: 30 }}>
       <ScrollView>
@@ -44,9 +46,21 @@ export default function App() {
 
         <Button
           title="press"
-          onPress={() => console.log('Hello React Native')}
-          color="amber"
+          onPress={() => setIsModalVisible(true)}
+          color="blue"
         />
+
+        <Modal
+          visible={isModalVisible}
+          onRequestClose={() => setIsModalVisible(false)}
+          animationType="slide"
+          presentationStyle="pageSheet"
+        >
+          <View style={{ flex: 1, backgroundColor: 'lightblue', padding: 30 }}>
+            <Text>Modal Content</Text>
+            <Button title="Close" onPress={() => setIsModalVisible(false)} />
+          </View>
+        </Modal>
       </ScrollView>
     </View>
   );
