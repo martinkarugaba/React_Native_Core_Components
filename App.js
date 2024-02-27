@@ -8,6 +8,8 @@ import {
   Button,
   Pressable,
   Modal,
+  StatusBar,
+  ActivityIndicator,
 } from 'react-native';
 const logoImg = require('./assets/twitter.jpg');
 
@@ -15,6 +17,11 @@ export default function App() {
   const [isModalVisible, setIsModalVisible] = useState(false);
   return (
     <View style={{ flex: 1, backgroundColor: '#fafafa', padding: 30 }}>
+      <StatusBar backgroundColor="lightblue" barStyle="dark-content" />
+      <ActivityIndicator />
+      <ActivityIndicator size="large" />
+      <ActivityIndicator size="large" color="orange" />
+      <ActivityIndicator size="large" color="orange" animating />
       <ScrollView>
         <Text>
           <Text style={{ color: 'orange' }}>Hello</Text> React Native
